@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 require('../models/products')
+require('../models/user')
 const Product = mongoose.model('Product')
 
 const getAll = (req,res)=> {Product.find()

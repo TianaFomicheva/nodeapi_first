@@ -1,17 +1,16 @@
 
-
-
 const express = require('express')
 const mongoose = require('mongoose')
 const config = require('./config');
-
-require('./app/models/products')
+const bcrypt = require('bcrypt')
+// console.log("1 ", bcrypt.hashSync("password", 10))
+// console.log("1 ", bcrypt.compareSync("password", "$2b$10$CF4.1dCWmI7ztkiaaPJE.umABuhsuEyup3bIULGDdYjLFp6OI5Z56"))
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(config.mongoUri)
-require('./app/models/products')
+require('./app/models')
 
 const {appPort, mongoUri} = config.app
 mongoose.connect(mongoUri)
